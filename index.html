@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense/Budget App</title>
+</head>
+<body>
+    <div class="expenseinputs">
+        <input type="number" id="dollaramt" placeholder="Enter Amount in $">
+        <input type="text" id="expenseDesc" placeholder="Enter Description">
+        <select id="expenseType">
+            <option value = "" disabled selected>Select Expense Type</option>
+            <option value="Income">INCOME</option>
+            <option value="Expense">EXPENSE</option>
+        </select>
+        <button id="submitButton">ADD</button>
+        <button id="clearButton">CLEAR</button>
+    </div>
+    <div class="expenseoutputs" id="displayExpenses">
+        <h1>Expense List:</h1>  
+    </div>
+    <div>
+        
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
