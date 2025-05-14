@@ -38,7 +38,20 @@ function addExpense(){
     
     ExpenseList.appendChild(singleExpense)
 
-    totalArray.push(document.getElementById("dollaramt").value);
+    expType = document.getElementById("expenseType");
+    typeOfExpense = expType.value;
+    console.log(typeOfExpense);
+    if (typeOfExpense === "Expense"){
+        ExpenseCost.textContent = "-" + document.getElementById("dollaramt").value;
+        totalArray.push("-" + document.getElementById("dollaramt").value);
+    } else if (typeOfExpense === "Income"){
+        ExpenseCost.textContent = document.getElementById("dollaramt").value;
+        totalArray.push(document.getElementById("dollaramt").value);
+    } else{
+        ExpenseCost.textContent = document.getElementById("dollaramt").value;
+    }
+
+    //totalArray.push(document.getElementById("dollaramt").value);
     console.log(totalArray);
     console.log("added expense");
     calculateTotal();
