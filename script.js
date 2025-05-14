@@ -62,9 +62,13 @@ function addExpense(){
 function clearList(){
     const ExpenseList = document.getElementById("displayExpenses");
     ExpenseList.innerHTML = "";
+    totalAmount = document.getElementById("expenseTotal");
+    totalAmount.innerHTML = "" 
     listTitle = document.createElement("h1");
     listTitle.textContent = "Expense List:"
     ExpenseList.appendChild(listTitle);
+    totalArray = [];
+    console.log(totalArray);
     calculateTotal();
 }
 
@@ -92,9 +96,10 @@ function calculateTotal(){
     for(let i = 0; i < totalArray.length; i++){
         currInt = parseFloat(totalArray[i]);
         totalDifference += currInt;
-        console.log(typeof totalArray[i]);
-        console.log(totalDifference);
     }
+    title = document.createElement("h1");
+    title.textContent = "Total: "
+    totalAmount.appendChild(title);
     totalToAdd.textContent = totalDifference;
     totalAmount.appendChild(totalToAdd);
 }
