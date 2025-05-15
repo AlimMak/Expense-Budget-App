@@ -7,30 +7,31 @@
     <title>Expense Tracker</title>
 </head>
 <body>
-    <div class="expenseinputs">
-        <h1>Expense Tracker</h1>
-        <input type="number" id="dollaramt" placeholder="Enter Amount in $" required>
-        <input type="text" id="expenseDesc" placeholder="Enter Description" required>
-        <select id="expenseType">
-            <option value = "" disabled selected>Select Expense Type</option>
-            <option value="Income">INCOME</option>
-            <option value="Expense">EXPENSE</option>
-        </select>
-        <button id="submitButton">ADD</button>
-        <button id="clearButton">CLEAR</button>
+    <div class="fullList">
+        <div class="expenseinputs">
+            <h1>Expense Tracker</h1>
+            <input type="number" id="dollaramt" placeholder="Enter Amount in $" required>
+            <input type="text" id="expenseDesc" placeholder="Enter Description" required>
+            <select id="expenseType">
+                <option value = "" disabled selected>Select Expense Type</option>
+                <option value="Income">INCOME</option>
+                <option value="Expense">EXPENSE</option>
+            </select>
+            <button id="submitButton">ADD</button>
+            <button id="clearButton">CLEAR</button>
+        </div>
+        <div class="expenseoutputs" id="displayExpenses">
+            <h1>Expense List:</h1>  
+        </div>
+        <div id="expenseTotal">
+            <h1>Total: </h1>
+        </div>
+        <script src="script.js"></script>
+        <div id="customAlert" class="alert-hidden">
+            <p id="alertMessage"></p>
+            <button onclick="hideAlert()">OK</button>
+        </div>
     </div>
-    <div class="expenseoutputs" id="displayExpenses">
-        <h1>Expense List:</h1>  
-    </div>
-    <div id="expenseTotal">
-        <h1>Total: </h1>
-    </div>
-    <script src="script.js"></script>
-    <div id="customAlert" class="alert-hidden">
-        <p id="alertMessage"></p>
-        <button onclick="hideAlert()">OK</button>
-    </div>
-
 
 </body>
 </html>
