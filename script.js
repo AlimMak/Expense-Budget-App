@@ -21,13 +21,19 @@ function addExpense(){
     // create element to store dollar amount and append 
     ExpenseCost = document.createElement("h3");
     ExpenseCost.textContent = document.getElementById("dollaramt").value;
+    console.log(document.getElementById("dollaramt").value);
     ExpenseCost.className = "expenseAmount"
     singleExpense.appendChild(ExpenseCost);
+    
 
     // create element to store the expense description and append 
     ExpenseDescription = document.createElement("h3");
     ExpenseDescription.textContent = document.getElementById("expenseDesc").value;
     singleExpense.appendChild(ExpenseDescription);
+    
+    ExpensType = document.createElement("h3");
+    ExpensType.textContent = document.getElementById("expenseType").value;
+    singleExpense.appendChild(ExpensType);
 
     removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
@@ -52,9 +58,14 @@ function addExpense(){
     }
 
     //totalArray.push(document.getElementById("dollaramt").value);
+
+    document.getElementById("dollaramt").value = "";
+    document.getElementById("expenseDesc").value = "";
     console.log(totalArray);
     console.log("added expense");
     calculateTotal();
+
+
 
 }
 
