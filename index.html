@@ -9,8 +9,8 @@
 <body>
     <div class="expenseinputs">
         <h1>Expense Tracker</h1>
-        <input type="number" id="dollaramt" placeholder="Enter Amount in $">
-        <input type="text" id="expenseDesc" placeholder="Enter Description">
+        <input type="number" id="dollaramt" placeholder="Enter Amount in $" required>
+        <input type="text" id="expenseDesc" placeholder="Enter Description" required>
         <select id="expenseType">
             <option value = "" disabled selected>Select Expense Type</option>
             <option value="Income">INCOME</option>
@@ -26,6 +26,11 @@
         <h1>Total: </h1>
     </div>
     <script src="script.js"></script>
+    <div id="customAlert" class="alert-hidden">
+        <p id="alertMessage"></p>
+        <button onclick="hideAlert()">OK</button>
+    </div>
+
 
 </body>
 </html>

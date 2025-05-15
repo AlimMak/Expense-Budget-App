@@ -13,6 +13,25 @@ totalAmount.appendChild(totalToAdd);
 calculateTotal();
 
 function addExpense(){
+
+    if (isNaN(document.getElementById("dollaramt").value)){
+        showAlert("please enter a valid value");
+        return;
+    } else if (!document.getElementById("dollaramt").value){
+        showAlert("please enter a valid amount");
+        return;
+    } else if (document.getElementById("dollaramt").value <= 0) {
+        showAlert("expense must be greater than 0");
+        return;
+    } else if (!document.getElementById("expenseDesc").value){
+        showAlert("please enter a description");
+        return;
+    } else if (document.getElementById("expenseType").selectedIndex == 0){
+        showAlert("please select expense Type");
+        return;
+    }
+
+
     // access the list and create the element that we will be appending
     ExpenseList = document.getElementById("displayExpenses");
     singleExpense = document.createElement("div")
@@ -48,25 +67,22 @@ function addExpense(){
     typeOfExpense = expType.value;
     console.log(typeOfExpense);
     if (typeOfExpense === "Expense"){
-        ExpenseCost.textContent = "-" + document.getElementById("dollaramt").value;
+        ExpenseCost.textContent = "-" + "$" + document.getElementById("dollaramt").value;
         totalArray.push("-" + document.getElementById("dollaramt").value);
     } else if (typeOfExpense === "Income"){
-        ExpenseCost.textContent = document.getElementById("dollaramt").value;
+        ExpenseCost.textContent = "$" + document.getElementById("dollaramt").value;
         totalArray.push(document.getElementById("dollaramt").value);
     } else{
         ExpenseCost.textContent = document.getElementById("dollaramt").value;
     }
 
     //totalArray.push(document.getElementById("dollaramt").value);
-
+    calculateTotal();
     document.getElementById("dollaramt").value = "";
     document.getElementById("expenseDesc").value = "";
     console.log(totalArray);
     console.log("added expense");
-    calculateTotal();
-
-
-
+    
 }
 
 
@@ -113,4 +129,14 @@ function calculateTotal(){
     totalAmount.appendChild(title);
     totalToAdd.textContent = totalDifference;
     totalAmount.appendChild(totalToAdd);
+}
+
+function showAlert(message){
+    const alertBox = document.getElementById("customAlert");
+    document.getElementById("alertMessage").textContent = message;
+    alertBox.classList.remove("alert-hidden");
+}
+
+function hideAlert(){
+    document.getElementById('customAlert').classList.add('alert-hidden');
 }
