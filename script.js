@@ -121,24 +121,51 @@ function removeExpense(){
     //console.log(totalArray)
     calculateTotal();
 }
-
+/*
 function calculateTotal(){
     totalAmount = document.getElementById("expenseTotal");
     totalAmount.innerHTML = "";
     totalToAdd = document.createElement("h2");
+    totalToAdd.className = "totalHTwo"
+
     let totalDifference = 0; 
+
     for(let i = 0; i < totalArray.length; i++){
         let currInt = parseFloat(totalArray[i]);
         let limitedCurrInt = parseFloat(currInt.toFixed(2))
         //console.log(limitedCurrInt)
         totalDifference += limitedCurrInt;
     }
+
     title = document.createElement("h1");
     title.textContent = "Total: "
     totalAmount.appendChild(title);
     totalToAdd.textContent = totalDifference;
     totalAmount.appendChild(totalToAdd);
 }
+*/
+function calculateTotal(){
+    totalAmount = document.getElementById("expenseTotal");
+    totalAmount.innerHTML = "";
+    totalToAdd = document.createElement("h1");
+    totalToAdd.className = "totalHTwo";
+
+    let totalDifference = 0; 
+
+    for(let i = 0; i < totalArray.length; i++){
+        let currInt = parseFloat(totalArray[i]);
+        let limitedCurrInt = parseFloat(currInt.toFixed(2))
+        totalDifference += limitedCurrInt;
+    }
+
+    title = document.createElement("h1");
+    title.textContent = "Total: ";
+    totalAmount.appendChild(title);
+    totalToAdd.textContent = "$ " + totalDifference;
+    totalAmount.appendChild(totalToAdd);
+
+}
+
 
 function showAlert(message){
     const alertBox = document.getElementById("customAlert");
