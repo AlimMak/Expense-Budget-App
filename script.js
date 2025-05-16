@@ -38,9 +38,16 @@ function addExpense(){
     singleExpense.className = "singleExp"
     
     // create element to store dollar amount and append 
+    expenseAdd = parseFloat(document.getElementById("dollaramt").value).toFixed(2)
     ExpenseCost = document.createElement("h3");
-    ExpenseCost.textContent = document.getElementById("dollaramt").value;
-    console.log(document.getElementById("dollaramt").value);
+    ExpenseCost.textContent = expenseAdd;
+    let unTrimmedExpense = parseFloat(document.getElementById("dollaramt").value)
+    let trimmedExpense = unTrimmedExpense.toFixed(2);
+    //console.log(trimmedExpense);
+    //ExpenseCost.textContent = toString(trimmedExpense);
+
+    //console.log(document.getElementById("dollaramt").value);
+    console.log(ExpenseCost.textContent)
     ExpenseCost.className = "expenseAmount"
     singleExpense.appendChild(ExpenseCost);
     
@@ -65,23 +72,23 @@ function addExpense(){
 
     expType = document.getElementById("expenseType");
     typeOfExpense = expType.value;
-    console.log(typeOfExpense);
+    //console.log(typeOfExpense);
     if (typeOfExpense === "Expense"){
-        ExpenseCost.textContent = "-" + "$" + document.getElementById("dollaramt").value;
+        ExpenseCost.textContent = "-" + "$" + expenseAdd;//(document.getElementById("dollaramt").value);
         totalArray.push("-" + document.getElementById("dollaramt").value);
     } else if (typeOfExpense === "Income"){
-        ExpenseCost.textContent = "$" + document.getElementById("dollaramt").value;
+        ExpenseCost.textContent = "$" + expenseAdd;//document.getElementById("dollaramt").value;
         totalArray.push(document.getElementById("dollaramt").value);
     } else{
-        ExpenseCost.textContent = document.getElementById("dollaramt").value;
+        ExpenseCost.textContent = expenseAdd;//document.getElementById("dollaramt").value;
     }
 
     //totalArray.push(document.getElementById("dollaramt").value);
     calculateTotal();
     document.getElementById("dollaramt").value = "";
     document.getElementById("expenseDesc").value = "";
-    console.log(totalArray);
-    console.log("added expense");
+    //console.log(totalArray);
+    //console.log("added expense");
     
 }
 
@@ -95,7 +102,7 @@ function clearList(){
     listTitle.textContent = "Expense List:"
     ExpenseList.appendChild(listTitle);
     totalArray = [];
-    console.log(totalArray);
+    //console.log(totalArray);
     calculateTotal();
 }
 
@@ -110,8 +117,8 @@ function removeExpense(){
     
 
     expenseToRemove.remove();
-    console.log("removed expense");
-    console.log(totalArray)
+    //console.log("removed expense");
+    //console.log(totalArray)
     calculateTotal();
 }
 
@@ -119,10 +126,12 @@ function calculateTotal(){
     totalAmount = document.getElementById("expenseTotal");
     totalAmount.innerHTML = "";
     totalToAdd = document.createElement("h2");
-    totalDifference = 0; 
+    let totalDifference = 0; 
     for(let i = 0; i < totalArray.length; i++){
-        currInt = parseFloat(totalArray[i]);
-        totalDifference += currInt;
+        let currInt = parseFloat(totalArray[i]);
+        let limitedCurrInt = parseFloat(currInt.toFixed(2))
+        //console.log(limitedCurrInt)
+        totalDifference += limitedCurrInt;
     }
     title = document.createElement("h1");
     title.textContent = "Total: "
