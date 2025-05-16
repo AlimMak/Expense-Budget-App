@@ -55,15 +55,19 @@ function addExpense(){
     // create element to store the expense description and append 
     ExpenseDescription = document.createElement("h3");
     ExpenseDescription.textContent = document.getElementById("expenseDesc").value;
+    ExpenseDescription.className = "expenseDescription";
     singleExpense.appendChild(ExpenseDescription);
     
     ExpensType = document.createElement("h3");
     ExpensType.textContent = document.getElementById("expenseType").value;
+    ExpensType.className = "expenseType"
     singleExpense.appendChild(ExpensType);
 
-    removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.className = "remove-button";
+    removeButton = document.createElement("i");
+    //removeButton.textContent = "Remove";
+
+    removeButton.classList.add("material-symbols-outlined", "remove-icon");
+    removeButton.textContent = "close";
     removeButton.addEventListener("click", removeExpense);
     singleExpense.appendChild(removeButton);
 

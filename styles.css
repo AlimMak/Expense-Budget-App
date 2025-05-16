@@ -1,37 +1,10 @@
-.singleExp{
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px; 
-}
-
-/* Alert Styling */
-#customAlert {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff4444;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.alert-hidden {
-  display: none !important;
-}
-
-#customAlert button {
-  background: white;
-  color: #ff4444;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
+.singleExp {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px auto; /* Fixed width for amount, flexible for description */
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 body{
@@ -84,8 +57,98 @@ body{
 
 .expenseSum h1 {
     margin-top: 0px;
-    margin-bottom: 0; /* Removes bottom margin from the "Total:" heading */
+    margin-bottom: 0;
+    font-family: 'Roboto Mono', monospace;
 }
+
 .totalHTwo {
     margin-top: 0; 
+}
+
+
+.expenseAmount {
+    text-align: right;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.expenseDescription {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expenseType {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+}
+
+.remove-icon {
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.remove-icon:hover {
+    color: #ff4444;
+    transform: scale(1.1);
+}
+
+.expenseinputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.expenseinputs button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(15, 23, 42);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.expenseinputs button:hover {
+    background-color: rgb(30, 41, 59);
+}
+
+
+/* Alert Styling */
+#customAlert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4444;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.alert-hidden {
+  display: none !important;
+}
+
+#customAlert button {
+  background: white;
+  color: #ff4444;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
