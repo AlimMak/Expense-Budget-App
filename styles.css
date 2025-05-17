@@ -28,6 +28,7 @@ body{
     border-radius: 15px;
     border: none;
     padding: 15px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #expenseDesc{
@@ -40,11 +41,13 @@ body{
     padding: 15px;
     border-radius: 15px;
     border: none;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #mainTitle{
     text-align: center;
     margin-top: 15px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .expenseSum {
@@ -77,6 +80,7 @@ body{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .expenseType {
@@ -108,7 +112,7 @@ body{
     margin-bottom: 20px;
 }
 
-.expenseinputs button {
+#submitButton{
     padding: 12px;
     border-radius: 8px;
     border: none;
@@ -118,9 +122,24 @@ body{
     transition: background-color 0.2s;
 }
 
-.expenseinputs button:hover {
+#submitButton:hover{
     background-color: rgb(30, 41, 59);
 }
+
+#clearButton{
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(255, 68, 68);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#clearButton:hover{
+    background-color: rgb(250, 84, 84);
+}
+
 
 
 /* Alert Styling */
@@ -152,3 +171,4 @@ body{
   border-radius: 3px;
   cursor: pointer;
 }
+
