@@ -110,6 +110,7 @@ body{
     gap: 15px;
     width: 80%;
     margin-bottom: 20px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #submitButton{
@@ -139,8 +140,6 @@ body{
 #clearButton:hover{
     background-color: rgb(250, 84, 84);
 }
-
-
 
 /* Alert Styling */
 #customAlert {
@@ -172,3 +171,8 @@ body{
   cursor: pointer;
 }
 
+.expenseoutputs h1{
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
